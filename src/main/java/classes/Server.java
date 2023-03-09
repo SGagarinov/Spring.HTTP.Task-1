@@ -37,7 +37,7 @@ public class Server {
     }
 
     private void newClient(Socket client) {
-        threadPool.execute(new ThreadPool(client));
+        threadPool.execute(new ClientTask(client));
     }
 
     public void addHandler(String type, String path, Handler handler) {
